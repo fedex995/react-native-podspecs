@@ -21,7 +21,7 @@ folly_version = '2021.06.28.00-v2'
 boost_compiler_flags = '-Wno-documentation'
 
 Pod::Spec.new do |s|
-  s.name                   = "React-perflogger"
+  s.name                   = "React-callinvoker"
   s.version                = version
   s.summary                = "-"  # TODO
   s.homepage               = "https://reactnative.dev/"
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.author                 = "Facebook, Inc. and its affiliates"
   s.platforms              = { :ios => "11.0" }
   s.source                 = source
-  s.source_files           = "ReactCommon/reactperflogger/*.{cpp,h}"
-  s.header_dir             = "reactperflogger"
+  s.source_files           = "ReactCommon/callinvoker/*.{cpp,h}"
+  s.header_dir             = "ReactCommon"
 end
