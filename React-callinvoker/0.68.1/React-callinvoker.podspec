@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.author                 = "Facebook, Inc. and its affiliates"
   s.platforms              = { :ios => "11.0" }
   s.source                 = source
-  s.source_files           = "ReactCommon/callinvoker/*.{cpp,h}"
+  s.source_files           = "ReactCommon/callinvoker/ReactCommon/*.{cpp,h}"
   s.header_dir             = "ReactCommon"
 end
