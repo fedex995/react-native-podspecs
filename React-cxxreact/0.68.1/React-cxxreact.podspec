@@ -1,3 +1,4 @@
+# coding: utf-8
 # Copyright (c) Meta Platforms, Inc. and affiliates.
 #
 # This source code is licensed under the MIT license found in the
@@ -21,31 +22,28 @@ folly_version = '2021.06.28.00-v2'
 boost_compiler_flags = '-Wno-documentation'
 
 Pod::Spec.new do |s|
-  s.name                   = "React-jsi"
+  s.name                   = "React-cxxreact"
   s.version                = version
   s.summary                = "-"  # TODO
   s.homepage               = "https://reactnative.dev/"
   s.license                = package["license"]
   s.author                 = "Facebook, Inc. and its affiliates"
-  s.platforms              = { :ios => "11.0" }
+  s.platforms              = { :ios => "11.0", :tvos => "11.0" }
   s.source                 = source
   s.source_files           = "ReactCommon/cxxreact/*.{cpp,h}"
   s.exclude_files          = "ReactCommon/cxxreact/SampleCxxModule.*"
   s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
   s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\"" }
-  s.header_dir             = "jsi"
-  s.default_subspec        = "Default"
+  s.header_dir             = "cxxreact"
 
   s.dependency "boost", "1.76.0"
   s.dependency "DoubleConversion"
   s.dependency "RCT-Folly", folly_version
   s.dependency "glog"
-
-  s.subspec "Default" do
-    # no-op
-  end
-
-  s.subspec "Fabric" do |ss|
-    ss.pod_target_xcconfig  = { "OTHER_CFLAGS" => "$(inherited) -DRN_FABRIC_ENABLED" }
-  end
+  s.dependency "React-jsinspector", version
+  s.dependency "React-callinvoker", version
+  s.dependency "React-runtimeexecutor", version
+  s.dependency "React-perflogger", version
+  s.dependency "React-jsi", version
+  s.dependency "React-logger", version
 end
