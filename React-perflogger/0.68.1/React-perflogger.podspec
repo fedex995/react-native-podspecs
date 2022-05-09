@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.author                 = "Facebook, Inc. and its affiliates"
   s.platforms              = { :ios => "11.0" }
   s.source                 = source
-  s.source_files           = "ReactCommon/reactperflogger/*.{cpp,h}"
+  s.source_files           = "ReactCommon/reactperflogger/reactperflogger/*.{cpp,h}"
   s.header_dir             = "reactperflogger"
 end
